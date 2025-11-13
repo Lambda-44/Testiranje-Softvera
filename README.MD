@@ -38,5 +38,11 @@ Razviti i testirati softverske komponente koristeći:
 
 ---
 
-## 📂 Struktura projekta
+## 📂 Kolege
+
+| GitHub Profil | Ime i Prezime | Index |
+|---------------|---------------|-------|
+| MuxBH28 | Muhammed Šehić |  |
+| Lambda-44 | Kerim Gazić |  |
+
 
