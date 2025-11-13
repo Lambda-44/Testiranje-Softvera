@@ -12,8 +12,6 @@ Ovdje se nalaze sve **zadaće, projekti i materijali** koji pokrivaju teorijski 
 | Zadaća | Tema | Kratak opis |
 |--------|------|--------------|
 | 🧩 Zadaća 1 | Inspekcija i testiranje koda | Razvoj i pregled C# konzolne aplikacije – sistem za upravljanje pametnom bibliotekom |
-| 🧮 Zadaća 2 | Jedinično testiranje | Pisanje i izvođenje unit testova korištenjem NUnit ili xUnit |
-| ⚙️ Zadaća 3 | Kontinuirana integracija | Primjena CI/CD alata i analiza pokrivenosti koda |
 | 📑 Dodatno | Dokumentacija i check-liste | Kontrolne liste, izvještaji o greškama i dijagrami |
 
 ---
@@ -44,5 +42,6 @@ Razviti i testirati softverske komponente koristeći:
 |---------------|---------------|-------|
 | MuxBH28 | Muhammed Šehić |  |
 | Lambda-44 | Kerim Gazić |  |
+| mesicc | Kemal Mešić | 236-ST |
 
 
