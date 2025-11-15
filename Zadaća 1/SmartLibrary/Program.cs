@@ -8,21 +8,22 @@ class Program
 {
     static void Main()
     {
-        var userRepo = new SmartLibrary.Data.UserRepository();
-        var userService = new SmartLibrary.Services.UserService(userRepo);
-
         var inventory = new LibraryInventory();
+        var userRepo = new UserRepository();
+        var userService = new UserService(userRepo);
+        var borrowRepo = new BorrowRepository();
+        var borrowService = new BorrowService(borrowRepo, inventory, userRepo);
 
         while (true)
         {
             Console.WriteLine("\n=== SMART LIBRARY SISTEM ===");
             Console.WriteLine("1. Upravljanje korisnicima");
             Console.WriteLine("2. Inventar knjiga");
+            Console.WriteLine("3. Sistem posudbe");
             Console.WriteLine("0. Izlaz");
             Console.Write("Izbor: ");
 
             var main = Console.ReadLine();
-
             if (main == "0") return;
 
             switch (main)
@@ -33,6 +34,10 @@ class Program
 
                 case "2":
                     BookMenu(inventory);
+                    break;
+
+                case "3":
+                    BorrowMenu(borrowService);
                     break;
 
                 default:
@@ -192,6 +197,60 @@ class Program
                     else
                         Console.WriteLine("Knjiga nije pronađena.");
                     break;
+            }
+        }
+    }
+
+    static void BorrowMenu(BorrowService service)
+    {
+        while (true)
+        {
+            Console.WriteLine("\n--- Sistem posudbe ---");
+            Console.WriteLine("1. Posudi knjigu");
+            Console.WriteLine("2. Vrati knjigu");
+            Console.WriteLine("3. Aktivne posudbe");
+            Console.WriteLine("4. Historija posudbi");
+            Console.WriteLine("0. Nazad");
+            Console.Write("Izbor: ");
+
+            string opcija = Console.ReadLine();
+            if (opcija == "0") return;
+
+            try
+            {
+                switch (opcija)
+                {
+                    case "1":
+                        Console.Write("ID korisnika: ");
+                        int uid = int.Parse(Console.ReadLine());
+
+                        Console.Write("ID knjige: ");
+                        int bid = int.Parse(Console.ReadLine());
+
+                        service.Posudi(uid, bid);
+                        Console.WriteLine("Knjiga uspješno posuđena!");
+                        break;
+
+                    case "2":
+                        Console.Write("ID posudbe: ");
+                        int pid = int.Parse(Console.ReadLine());
+
+                        service.Vrati(pid);
+                        Console.WriteLine("Knjiga vraćena!");
+                        break;
+
+                    case "3":
+                        service.PrikaziAktivne();
+                        break;
+
+                    case "4":
+                        service.PrikaziHistoriju();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Greška: {ex.Message}");
             }
         }
     }
