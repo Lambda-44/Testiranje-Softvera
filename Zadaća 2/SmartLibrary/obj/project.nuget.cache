@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "iRBsTOVBJP0=",
+  "success": true,
+  "projectFilePath": "/run/media/mux/930GB/Projekti/MuxBH28/Testiranje-Softvera/Zadaća 1/SmartLibrary/SmartLibrary.csproj",
+  "expectedPackageFiles": [
+    "/home/mux/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
